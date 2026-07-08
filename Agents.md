@@ -1,0 +1,2 @@
+# Business Requirement
+create a functional web applicaiton for my profile using profile.txt added in this folder. It should have about me section, portfolio, work experience and an digital twin on this website.

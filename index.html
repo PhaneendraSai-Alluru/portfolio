@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phaneendra Sai Alluru | Engineering Manager</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--primary:#1a1a2e;--secondary:#16213e;--accent:#0f3460;--highlight:#e94560;--text:#e0e0e0;--muted:#8892b0;--card:#1e2746;--bg:#0a0a1a}
+    html{scroll-behavior:smooth}
+    body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    /* Nav */
+    nav{position:fixed;top:0;width:100%;background:rgba(10,10,26,.92);backdrop-filter:blur(12px);z-index:1000;border-bottom:1px solid rgba(255,255,255,.06)}
+    nav .container{display:flex;justify-content:space-between;align-items:center;height:64px}
+    nav .logo{font-weight:700;font-size:1.2rem;color:var(--text);text-decoration:none}
+    nav .logo span{color:var(--highlight)}
+    nav ul{display:flex;gap:28px;list-style:none}
+    nav ul a{color:var(--muted);text-decoration:none;font-size:.9rem;transition:color .2s}
+    nav ul a:hover{color:var(--highlight)}
+    .menu-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+    /* Hero */
+    .hero{min-height:100vh;display:flex;align-items:center;padding-top:64px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(233,69,96,.12) 0%,transparent 70%);pointer-events:none}
+    .hero-content{position:relative;z-index:1}
+    .hero-content .badge{display:inline-block;padding:6px 16px;border-radius:100px;background:rgba(233,69,96,.15);color:var(--highlight);font-size:.8rem;font-weight:600;margin-bottom:20px;letter-spacing:.5px}
+    .hero-content h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:1.1;margin-bottom:12px}
+    .hero-content h1 span{color:var(--highlight)}
+    .hero-content .title{font-size:clamp(1.1rem,2vw,1.4rem);color:var(--muted);margin-bottom:24px}
+    .hero-content p{max-width:600px;color:var(--muted);font-size:1.05rem;margin-bottom:32px}
+    .hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:8px;font-weight:600;font-size:.95rem;text-decoration:none;transition:all .25s;border:none;cursor:pointer}
+    .btn-primary{background:var(--highlight);color:#fff}
+    .btn-primary:hover{background:#d63850;transform:translateY(-2px);box-shadow:0 8px 30px rgba(233,69,96,.3)}
+    .btn-outline{border:1.5px solid var(--muted);color:var(--text)}
+    .btn-outline:hover{border-color:var(--highlight);color:var(--highlight);transform:translateY(-2px)}
+    .hero-stats{display:flex;gap:40px;margin-top:48px}
+    .hero-stats div{text-align:center}
+    .hero-stats .num{font-size:2rem;font-weight:800;color:var(--text)}
+    .hero-stats .label{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+    /* Section */
+    section{padding:100px 0 80px}
+    .section-label{display:inline-block;padding:4px 14px;border-radius:100px;background:rgba(233,69,96,.12);color:var(--highlight);font-size:.78rem;font-weight:600;margin-bottom:12px;letter-spacing:.5px}
+    section h2{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;margin-bottom:48px}
+    section h2::after{content:'';display:block;width:50px;height:3px;background:var(--highlight);margin-top:12px;border-radius:2px}
+    /* About */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .about-grid .about-text{color:var(--muted);font-size:1.05rem}
+    .about-grid .about-text p+p{margin-top:16px}
+    .about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:12px;list-style:none}
+    .about-highlights li{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--card);border-radius:8px;font-size:.9rem;color:var(--text)}
+    .about-highlights li::before{content:'\2713';color:var(--highlight);font-weight:700}
+    /* Experience */
+    .timeline{position:relative;padding-left:32px}
+    .timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:2px;background:rgba(233,69,96,.25)}
+    .timeline-item{position:relative;margin-bottom:48px}
+    .timeline-item:last-child{margin-bottom:0}
+    .timeline-item::before{content:'';position:absolute;left:-38px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--highlight);border:3px solid var(--bg)}
+    .timeline-item .date{font-size:.82rem;color:var(--highlight);font-weight:600;margin-bottom:4px}
+    .timeline-item .role{font-size:1.15rem;font-weight:700;color:var(--text)}
+    .timeline-item .company{font-size:.95rem;color:var(--muted);margin-bottom:10px}
+    .timeline-item ul{list-style:none;color:var(--muted);font-size:.92rem}
+    .timeline-item ul li{position:relative;padding-left:18px;margin-bottom:4px}
+    .timeline-item ul li::before{content:'-';position:absolute;left:0;color:var(--highlight)}
+    /* Skills */
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+    .skill-tag{padding:10px 18px;background:var(--card);border-radius:8px;text-align:center;font-size:.88rem;color:var(--text);border:1px solid rgba(255,255,255,.06);transition:all .25s}
+    .skill-tag:hover{border-color:var(--highlight);transform:translateY(-2px)}
+    .skill-category{margin-bottom:32px}
+    .skill-category h3{font-size:1.1rem;font-weight:600;color:var(--muted);margin-bottom:12px}
+    /* Projects / Portfolio */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px}
+    .project-card{background:var(--card);border-radius:12px;padding:28px;border:1px solid rgba(255,255,255,.06);transition:all .3s}
+    .project-card:hover{border-color:var(--highlight);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+    .project-card h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}
+    .project-card p{color:var(--muted);font-size:.9rem;line-height:1.6}
+    /* Education & Certs */
+    .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+    .edu-card,.cert-card{background:var(--card);border-radius:12px;padding:24px;border:1px solid rgba(255,255,255,.06)}
+    .edu-card h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+    .edu-card .sub{color:var(--muted);font-size:.85rem;margin-bottom:4px}
+    .edu-card .score{color:var(--highlight);font-weight:600;font-size:.9rem}
+    .certs-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;list-style:none}
+    .certs-list li{padding:10px 16px;background:var(--card);border-radius:8px;font-size:.88rem}
+    .certs-list li::before{content:'\2726 ';color:var(--highlight)}
+    /* Contact */
+    .contact-section{text-align:center}
+    .contact-section h2::after{margin:12px auto 0}
+    .contact-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:32px}
+    .contact-link{display:flex;align-items:center;gap:10px;padding:14px 28px;background:var(--card);border-radius:10px;text-decoration:none;color:var(--text);font-size:.95rem;border:1px solid rgba(255,255,255,.06);transition:all .25s}
+    .contact-link:hover{border-color:var(--highlight);transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.2)}
+    .contact-link svg{width:20px;height:20px;fill:var(--highlight)}
+    .contact-link .label{color:var(--muted);font-size:.8rem}
+    /* Footer */
+    footer{text-align:center;padding:32px 0;border-top:1px solid rgba(255,255,255,.06);color:var(--muted);font-size:.85rem}
+    /* Chat Widget */
+    .chat-btn{position:fixed;bottom:24px;right:24px;width:60px;height:60px;border-radius:50%;background:var(--highlight);color:#fff;border:none;font-size:1.5rem;cursor:pointer;z-index:999;box-shadow:0 4px 20px rgba(233,69,96,.4);transition:all .3s}
+    .chat-btn:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(233,69,96,.5)}
+    .chat-btn.hidden{display:none}
+    .chat-panel{position:fixed;bottom:96px;right:24px;width:380px;height:560px;background:var(--card);border-radius:16px;border:1px solid rgba(255,255,255,.1);display:none;flex-direction:column;z-index:999;box-shadow:0 16px 60px rgba(0,0,0,.5);overflow:hidden}
+    .chat-panel.open{display:flex}
+    .chat-header{background:var(--highlight);padding:16px 20px;display:flex;align-items:center;gap:12px;flex-shrink:0}
+    .chat-header .avatar{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700}
+    .chat-header .info{flex:1}
+    .chat-header .info .name{font-weight:700;font-size:.95rem}
+    .chat-header .info .status{font-size:.75rem;opacity:.8}
+    .chat-close{background:none;border:none;color:#fff;font-size:1.3rem;cursor:pointer;padding:4px}
+    .chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+    .chat-messages .msg{max-width:85%;padding:10px 14px;border-radius:12px;font-size:.88rem;line-height:1.5;animation:fadeIn .3s ease}
+    .chat-messages .msg.bot{align-self:flex-start;background:var(--card);border:1px solid rgba(255,255,255,.06);border-bottom-left-radius:4px;color:var(--text)}
+    .chat-messages .msg.user{align-self:flex-end;background:var(--highlight);color:#fff;border-bottom-right-radius:4px}
+    .chat-messages .msg.typing{background:transparent;border:none;display:flex;gap:4px;padding:12px 14px}
+    .chat-messages .msg.typing span{width:8px;height:8px;border-radius:50%;background:var(--muted);animation:typing 1.4s infinite}
+    .chat-messages .msg.typing span:nth-child(2){animation-delay:.2s}
+    .chat-messages .msg.typing span:nth-child(3){animation-delay:.4s}
+    @keyframes typing{0%,60%,100%{opacity:.3}30%{opacity:1}}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .chat-input-wrap{display:flex;gap:8px;padding:12px 16px;border-top:1px solid rgba(255,255,255,.06);background:var(--card);flex-shrink:0}
+    .chat-input-wrap input{flex:1;padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:var(--bg);color:var(--text);font-size:.88rem;outline:none;transition:border .2s}
+    .chat-input-wrap input:focus{border-color:var(--highlight)}
+    .chat-input-wrap input::placeholder{color:var(--muted)}
+    .chat-input-wrap button{padding:10px 18px;border-radius:8px;background:var(--highlight);color:#fff;border:none;cursor:pointer;font-weight:600;font-size:.85rem;transition:background .2s}
+    .chat-input-wrap button:hover{background:#d63850}
+    /* Request Form in Chat */
+    .request-form{padding:12px 16px;background:var(--bg);border-top:1px solid rgba(255,255,255,.06);flex-shrink:0}
+    .request-form input,.request-form textarea{width:100%;padding:8px 12px;margin-bottom:8px;border-radius:6px;border:1px solid rgba(255,255,255,.1);background:var(--card);color:var(--text);font-size:.82rem;outline:none;box-sizing:border-box;font-family:inherit}
+    .request-form textarea{min-height:60px;resize:vertical}
+    .request-form input:focus,.request-form textarea:focus{border-color:var(--highlight)}
+    .request-form button{width:100%;padding:8px;border-radius:6px;background:var(--highlight);color:#fff;border:none;cursor:pointer;font-weight:600;font-size:.82rem}
+    .request-form .cancel-btn{background:transparent;border:1px solid var(--muted);color:var(--muted);margin-top:4px;font-size:.78rem}
+    .request-form .cancel-btn:hover{background:rgba(255,255,255,.05)}
+    /* Chat scrollbar */
+    .chat-messages::-webkit-scrollbar{width:4px}
+    .chat-messages::-webkit-scrollbar-track{background:transparent}
+    .chat-messages::-webkit-scrollbar-thumb{background:var(--muted);border-radius:4px}
+
+    @media(max-width:480px){
+      .chat-panel{width:calc(100vw - 32px);height:60vh;bottom:84px;right:16px}
+      .chat-btn{width:52px;height:52px;font-size:1.2rem;bottom:16px;right:16px}
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      nav ul{display:none;position:absolute;top:64px;left:0;width:100%;flex-direction:column;background:rgba(10,10,26,.98);padding:16px 24px;gap:16px}
+      nav ul.open{display:flex}
+      .menu-toggle{display:block}
+      .about-grid,.edu-grid{grid-template-columns:1fr}
+      .projects-grid{grid-template-columns:1fr}
+      .certs-list{grid-template-columns:1fr}
+      .hero-stats{gap:20px}
+      .hero-buttons{flex-direction:column}
+      section{padding:60px 0 50px}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="#" class="logo">Phaneendra<span>.</span></a>
+      <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')">&#9776;</button>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="badge">Engineering Manager</div>
+      <h1>Phaneendra Sai<br><span>Alluru</span></h1>
+      <div class="title">Engineering Manager @ Volvo Cars | AI & Data Leader</div>
+      <p>11+ years of experience leading cross-functional teams, building data platforms, AI solutions, and enterprise applications across North America, South America, and APAC.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        <a href="#experience" class="btn btn-outline">View Experience</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="num">11+</div><div class="label">Years Exp</div></div>
+        <div><div class="num">18</div><div class="label">Team Size</div></div>
+        <div><div class="num">3</div><div class="label">Countries</div></div>
+        <div><div class="num">8+</div><div class="label">Projects</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-label">About Me</div>
+      <h2>Driving Impact Through Data & Leadership</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Engineering Manager at Volvo Cars, leading a team of 18 professionals managing end-to-end delivery for the North American and South American markets. Building data pipelines, web portals, iOS/Android applications, and designing AI solutions including LLM-powered chat functionality.</p>
+          <p>Previously served as Project Manager at Volvo Cars for Core Data & Analytics, and Senior Project Manager at Autodesk leading enterprise programs. Proven track record in driving data-driven decision-making, process automation, and cross-functional team leadership across geographies.</p>
+        </div>
+        <ul class="about-highlights">
+          <li>Engineering Manager @ Volvo Cars</li>
+          <li>Senior Project Manager @ Autodesk</li>
+          <li>AI & Data Platform Strategy</li>
+          <li>Certified Scrum Master (CSM)</li>
+          <li>SAFe 6.0 Certified Practitioner</li>
+          <li>Google Advanced Data Analytics Pro</li>
+          <li>Six Sigma Green Belt</li>
+          <li>Flutter & Agentic AI Development</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" style="background:var(--secondary)">
+    <div class="container">
+      <div class="section-label">Experience</div>
+      <h2>11+ Years of Professional Excellence</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">NOV 2025 - Present</div>
+          <div class="role">Engineering Manager - Commercial Digital - USA</div>
+          <div class="company">Volvo Cars India Pvt Ltd</div>
+          <ul>
+            <li>Lead a team of 18 professionals managing end-to-end delivery for North & South American markets</li>
+            <li>Building data pipelines for commercial data, web portals, iOS & Android applications</li>
+            <li>Designing AI solutions for self-serving analytics and LLMs for Chat Functionality</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="date">MAY 2024 - OCT 2025</div>
+          <div class="role">Project Manager - Core Data & Analytics</div>
+          <div class="company">Volvo Cars India Pvt Ltd</div>
+          <ul>
+            <li>Led flagship analytical projects driving data-driven decision-making</li>
+            <li>Collaborated with Enterprise Architecture on business cases</li>
+            <li>Oversaw project implementation using standard data management frameworks</li>
+            <li>Designed enterprise-level applications for program management</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="date">SEP 2021 - MAY 2024</div>
+          <div class="role">Senior Project Manager</div>
+          <div class="company">Autodesk India Pvt Ltd</div>
+          <ul>
+            <li>Executed enterprise business agreements for enterprise-level customers</li>
+            <li>Led change management strategies increasing process adoption by 40%</li>
+            <li>Recruited and trained the PMO team for the APAC region</li>
+            <li>Reported team KPIs to executive leadership</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="date">JAN 2020 - AUG 2021</div>
+          <div class="role">Project Business Analyst</div>
+          <div class="company">Autodesk India Pvt Ltd</div>
+          <ul>
+            <li>Prepared BRD documents and consulting contracts</li>
+            <li>Led process automation initiatives reducing human effort by 50%</li>
+            <li>Coordinated BI teams for enterprise metrics and customer analytics</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="date">MAR 2019 - DEC 2019</div>
+          <div class="role">Business Analyst</div>
+          <div class="company">Cognizant Solutions Pvt Ltd</div>
+          <ul>
+            <li>Collaborated with consulting teams on requirements and contracts</li>
+            <li>Helped track SLAs reducing penalties by 3%</li>
+            <li>Managed financial planning, budget oversight, and SLA compliance</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="date">MAR 2017 - MAR 2019</div>
+          <div class="role">Senior Analyst</div>
+          <div class="company">Accenture Solutions Pvt Ltd</div>
+          <ul>
+            <li>Coordinated with consulting teams for requirements, estimation, and tracking</li>
+            <li>Oversaw vendor management and contract negotiations</li>
+            <li>Prepared BI reports for data-driven decision-making</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="date">JAN 2016 - MAR 2017</div>
+          <div class="role">PMO Executive</div>
+          <div class="company">Credencys Solutions Pvt Ltd</div>
+          <ul>
+            <li>Conducted requirement gathering and created wireframes</li>
+            <li>Designed project dashboards for real-time monitoring</li>
+            <li>Monitored SLA compliance and tracked performance metrics</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="date">JAN 2015 - DEC 2015</div>
+          <div class="role">Project Coordinator</div>
+          <div class="company">Elsner Technologies Pvt Ltd</div>
+          <ul>
+            <li>Gathered business requirements and created wireframes</li>
+            <li>Generated detailed project reports tracking progress and risks</li>
+            <li>Monitored KPIs and provided data-driven insights</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-label">Skills</div>
+      <h2>Tools & Technologies</h2>
+      <div class="skill-category">
+        <h3>Development & AI</h3>
+        <div class="skills-grid">
+          <div class="skill-tag">Flutter Development</div>
+          <div class="skill-tag">Agentic AI Development</div>
+          <div class="skill-tag">Python Programming</div>
+          <div class="skill-tag">Django</div>
+          <div class="skill-tag">MySQL</div>
+          <div class="skill-tag">LLM Integration</div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Data & Analytics</h3>
+        <div class="skills-grid">
+          <div class="skill-tag">Microsoft Power BI</div>
+          <div class="skill-tag">Tableau</div>
+          <div class="skill-tag">Google Analytics</div>
+          <div class="skill-tag">Data Pipelines</div>
+          <div class="skill-tag">Data Quality</div>
+          <div class="skill-tag">Advanced Analytics</div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Project Management</h3>
+        <div class="skills-grid">
+          <div class="skill-tag">Jira</div>
+          <div class="skill-tag">Azure DevOps</div>
+          <div class="skill-tag">MS Project</div>
+          <div class="skill-tag">Agile / Scrum</div>
+          <div class="skill-tag">SAFe 6.0</div>
+          <div class="skill-tag">Stakeholder Mgmt</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" style="background:var(--secondary)">
+    <div class="container">
+      <div class="section-label">Portfolio</div>
+      <h2>Current Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Fleet Management Application</h3>
+          <p>Cross-functional app for Volvo Cars tracking orders from factory floor to dealer warehouse. Combines data from enterprise logistics, sales systems, and car telematics to track health, location, and state.</p>
+        </div>
+        <div class="project-card">
+          <h3>Cross-Border Data Transfer Platform</h3>
+          <p>Business analysis and program planning for a data platform managing cross-border data transfers, ensuring compliance with international laws and government regulations.</p>
+        </div>
+        <div class="project-card">
+          <h3>Corporate Data & Analytics Dashboards</h3>
+          <p>End-to-end process for use case intake, data engineering pipelines, and analytical dashboards supporting global Data & Analytics leadership in prioritizing initiatives.</p>
+        </div>
+        <div class="project-card">
+          <h3>Data Engineering for Advanced Planning</h3>
+          <p>Built data pipelines supporting planning solutions for logistics and supply chain management, integrating data from engineering and SCM systems.</p>
+        </div>
+        <div class="project-card">
+          <h3>Automated Data Quality POC</h3>
+          <p>Solution automating data quality introspection with record-level accuracy for manufacturing and supply chain management, now integrated into production pipelines.</p>
+        </div>
+        <div class="project-card">
+          <h3>Unified Intake Web Application</h3>
+          <p>Provides a unified decision-making framework for Volvo Cars leadership to prioritize projects based on financial impact and execution capabilities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-label">Education & Certifications</div>
+      <h2>Academic Background</h2>
+      <div class="edu-grid">
+        <div>
+          <div class="edu-card">
+            <h3>Master of Business Administration</h3>
+            <div class="sub">Rai Business School</div>
+            <div class="score">CGPA: 3.1</div>
+            <div class="sub" style="margin-top:6px;font-size:.8rem">APR 2015</div>
+          </div>
+          <div class="edu-card" style="margin-top:16px">
+            <h3>B.Tech in Electrical & Electronics Engineering</h3>
+            <div class="sub">RISE Prakasam Engineering College - JNTUK</div>
+            <div class="score">74.47%</div>
+            <div class="sub" style="margin-top:6px;font-size:.8rem">APR 2013</div>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:1.1rem;margin-bottom:16px">Certifications</h3>
+          <ul class="certs-list">
+            <li>Certified Scrum Master (CSM)</li>
+            <li>SAFe 6.0 Certified Practitioner</li>
+            <li>Six Sigma Green Belt</li>
+            <li>Google Data Analytics Professional</li>
+            <li>Google Advanced Data Analytics Pro</li>
+            <li>Digital Product Management Specialization</li>
+            <li>Product Management Specialization</li>
+            <li>LUMA Certified</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="background:var(--secondary)">
+    <div class="container contact-section">
+      <div class="section-label">Contact</div>
+      <h2>Let's Connect</h2>
+      <p style="color:var(--muted);max-width:500px;margin:0 auto">Open to conversations about engineering leadership, data strategy, AI solutions, and product innovation.</p>
+      <div class="contact-links">
+        <a href="mailto:alluruphaneendrasai@gmail.com" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <div><div class="label">Email</div>alluruphaneendrasai@gmail.com</div>
+        </a>
+        <a href="https://www.linkedin.com/in/alluruphaneendrasai/" target="_blank" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          <div><div class="label">LinkedIn</div>alluruphaneendrasai</div>
+        </a>
+        <a href="tel:+917436056449" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <div><div class="label">Phone</div>+91 74360 56449</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      &copy; 2025 Phaneendra Sai Alluru. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Digital Twin Chat -->
+  <button class="chat-btn" id="chatBtn" onclick="toggleChat()">&#x1F916;</button>
+
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-header">
+      <div class="avatar">&#x1F916;</div>
+      <div class="info">
+        <div class="name">Digital Twin</div>
+        <div class="status">Online - Ask me anything</div>
+      </div>
+      <button class="chat-close" onclick="toggleChat()">&times;</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg bot">Hi! I'm Phaneendra's digital twin. Ask me about his experience, skills, projects, or anything from his profile. You can also say "send request" to get in touch with him!</div>
+    </div>
+    <div class="chat-input-wrap" id="chatInputWrap">
+      <input type="text" id="chatInput" placeholder="Type your message..." onkeydown="if(event.key==='Enter') sendMessage()">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+    <div class="request-form" id="requestForm" style="display:none">
+      <input type="text" id="reqName" placeholder="Your Name" required>
+      <input type="email" id="reqEmail" placeholder="Your Email" required>
+      <textarea id="reqMsg" placeholder="Your Message..." required></textarea>
+      <button onclick="submitRequest()">Send Request</button>
+      <button class="cancel-btn" onclick="hideRequestForm()">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    var knowledgeBase = {
+      greeting: {
+        keywords: ['hi', 'hello', 'hey', 'greetings', 'good morning', 'good afternoon', 'good evening'],
+        response: "Hello! I'm the digital twin of Phaneendra Sai Alluru. How can I help you today? You can ask me about his experience, skills, education, certifications, projects, or contact information. If you'd like to get in touch with him, just say 'send request'!"
+      },
+      about: {
+        keywords: ['about', 'who are you', 'tell me about', 'background', 'summary', 'profile', 'introduce'],
+        response: "Phaneendra Sai Alluru is an Engineering Manager at Volvo Cars, leading a team of 18 professionals managing end-to-end delivery for North American and South American markets. He has 11+ years of experience in data platforms, AI solutions, and enterprise applications across Volvo Cars, Autodesk, Cognizant, Accenture, and other organizations. He specializes in building data pipelines, web portals, mobile applications, and designing AI solutions including LLM-powered chat functionality."
+      },
+      experience: {
+        keywords: ['experience', 'work', 'job', 'career', 'employment', 'roles', 'positions', 'background'],
+        response: "Phaneendra has 11+ years of experience across 8 roles:\n- Engineering Manager at Volvo Cars (Nov 2025 - Present)\n- Project Manager at Volvo Cars (May 2024 - Oct 2025)\n- Senior Project Manager at Autodesk (Sep 2021 - May 2024)\n- Project Business Analyst at Autodesk (Jan 2020 - Aug 2021)\n- Business Analyst at Cognizant (Mar 2019 - Dec 2019)\n- Senior Analyst at Accenture (Mar 2017 - Mar 2019)\n- PMO Executive at Credencys (Jan 2016 - Mar 2017)\n- Project Coordinator at Elsner Technologies (Jan 2015 - Dec 2015)\n\nAsk me about any specific role for more details!"
+      },
+      'experience-eng': {
+        keywords: ['engineering manager', 'volvo cars', 'current role', 'present role', 'commercial digital'],
+        response: "As Engineering Manager - Commercial Digital - USA at Volvo Cars (Nov 2025 - Present), Phaneendra leads a team of 18 professionals managing end-to-end delivery for North American and South American markets. He is responsible for building data pipelines for commercial data, developing web portals for operations, building iOS and Android applications, and designing AI solutions for self-serving analytics and LLM-powered chat functionality."
+      },
+      'experience-pm': {
+        keywords: ['project manager', 'core data', 'data and analytics'],
+        response: "As Project Manager - Core Data & Analytics at Volvo Cars (May 2024 - Oct 2025), he led flagship analytical projects, collaborated with Enterprise Architecture on business cases, conducted business analysis, assisted in ROI assessment, coordinated with executive stakeholders, and designed enterprise-level applications for program management and financial benefit calculations."
+      },
+      'experience-spm': {
+        keywords: ['senior project manager', 'autodesk'],
+        response: "As Senior Project Manager at Autodesk (Sep 2021 - May 2024), he executed enterprise business agreements for enterprise-level customers, conducted requirement gathering workshops, coordinated with executives for project approvals, oversaw project accounting and revenue recognition (100% compliance), led change management strategies increasing process adoption by 40%, and recruited/trained the PMO team for the APAC region."
+      },
+      'experience-pba': {
+        keywords: ['project business analyst', 'business analyst autodesk'],
+        response: "As Project Business Analyst at Autodesk (Jan 2020 - Aug 2021), he prepared BRD documents and consulting contracts, managed project time and budget estimation, trained PMO and consulting teams, and led process automation initiatives that reduced human effort by 50%."
+      },
+      'experience-ba': {
+        keywords: ['business analyst cognizant', 'cognizant'],
+        response: "As Business Analyst at Cognizant Solutions (Mar 2019 - Dec 2019), he collaborated with consulting teams to gather requirements and negotiate contracts, helped teams track SLAs reducing penalties by 3%, and managed financial planning, budget oversight, and SLA compliance."
+      },
+      'experience-sa': {
+        keywords: ['senior analyst', 'accenture'],
+        response: "As Senior Analyst at Accenture Solutions (Mar 2017 - Mar 2019), he coordinated with consulting teams for requirements, estimation, and tracking, managed financial planning and invoicing, oversaw vendor management including contract negotiations, and prepared BI reports for data-driven decision-making."
+      },
+      'experience-pmo': {
+        keywords: ['pmo executive', 'credencys'],
+        response: "As PMO Executive at Credencys Solutions (Jan 2016 - Mar 2017), he conducted requirement gathering, created wireframes, developed project documentation, prepared detailed project reports, designed project dashboards for real-time monitoring, and monitored SLA compliance."
+      },
+      'experience-pc': {
+        keywords: ['project coordinator', 'elsner'],
+        response: "As Project Coordinator at Elsner Technologies (Jan 2015 - Dec 2015), he gathered business requirements, created wireframes, developed project documentation, generated detailed project reports tracking progress and risks, designed project dashboards, and monitored KPIs."
+      },
+      skills: {
+        keywords: ['skills', 'technologies', 'tools', 'tech stack', 'technical'],
+        response: "Phaneendra's key skills include:\n- Development & AI: Flutter, Agentic AI, Python, Django, MySQL, LLM Integration\n- Data & Analytics: Power BI, Tableau, Google Analytics, Data Pipelines, Data Quality\n- Project Management: Jira, Azure DevOps, MS Project, Agile/Scrum, SAFe 6.0, Stakeholder Management\n- Certifications: CSM, SAFe 6.0, Six Sigma Green Belt, Google Data Analytics Professional, Google Advanced Data Analytics, Digital Product Management"
+      },
+      education: {
+        keywords: ['education', 'degree', 'college', 'academic', 'study', 'university', 'mba', 'bachelor', 'b.tech', 'graduate'],
+        response: "Phaneendra holds:\n- MBA from Rai Business School (APR 2015) - CGPA: 3.1\n- B.Tech in Electrical & Electronics Engineering from RISE Prakasam Engineering College - JNTUK (APR 2013) - 74.47%"
+      },
+      certifications: {
+        keywords: ['certifications', 'certified', 'scrum', 'csm', 'safe', 'six sigma', 'green belt', 'google data', 'product management', 'luma'],
+        response: "Phaneendra's certifications:\n- Certified Scrum Master (CSM)\n- SAFe 6.0 Certified Practitioner\n- Six Sigma Green Belt\n- Google Data Analytics Professional\n- Google Advanced Data Analytics Professional\n- Digital Product Management Specialization\n- Product Management Specialization\n- LUMA Certified"
+      },
+      projects: {
+        keywords: ['projects', 'portfolio', 'current projects', 'fleet', 'data transfer', 'dashboard', 'data quality', 'intake', 'planning'],
+        response: "Phaneendra is currently working on:\n1. Fleet Management Application - tracking orders from factory to dealer using telematics data\n2. Cross-Border Data Transfer Platform - ensuring compliant data transfers across borders\n3. Corporate Data & Analytics Dashboards - supporting global D&A leadership\n4. Data Engineering for Advanced Planning - pipelines for logistics and SCM\n5. Automated Data Quality POC - record-level accuracy validation\n6. Unified Intake Web Application - decision-making framework for prioritizing projects"
+      },
+      contact: {
+        keywords: ['contact', 'email', 'phone', 'linkedin', 'reach', 'connect', 'address'],
+        response: "You can reach Phaneendra via:\n- Email: alluruphaneendrasai@gmail.com\n- Phone: +91 74360 56449\n- LinkedIn: https://www.linkedin.com/in/alluruphaneendrasai/\n\nWould you like to send him a request? Just say 'send request'!"
+      },
+      thanks: {
+        keywords: ['thank', 'thanks', 'appreciate', 'grateful'],
+        response: "You're welcome! Feel free to ask if you have any other questions about Phaneendra. If you'd like to get in touch with him directly, just say 'send request' and I'll help you with that!"
+      },
+      farewell: {
+        keywords: ['bye', 'goodbye', 'see you', 'later'],
+        response: "Goodbye! It was great chatting with you. Feel free to come back anytime if you have more questions about Phaneendra. Have a great day!"
+      }
+    };
+
+    function findBestResponse(message) {
+      var msg = message.toLowerCase().trim();
+
+      if (msg.includes('send request') || msg.includes('hire') || msg.includes('work with') || (msg.includes('contact') && (msg.includes('want') || msg.includes('like') || msg.includes('need') || msg.includes('can i') || msg.includes('how to')))) {
+        return { type: 'request', text: "I'd be happy to connect you with Phaneendra! Please fill in your details below and I'll open your email client with the message ready to send." };
+      }
+
+      var matched = [];
+      for (var key in knowledgeBase) {
+        var intent = knowledgeBase[key];
+        var score = 0;
+        for (var k = 0; k < intent.keywords.length; k++) {
+          if (msg.includes(intent.keywords[k].toLowerCase())) {
+            score += intent.keywords[k].length;
+          }
+        }
+        if (score > 0) matched.push({ score: score, response: intent.response });
+      }
+
+      matched.sort(function(a, b) { return b.score - a.score; });
+      if (matched.length > 0) {
+        return { type: 'answer', text: matched[0].response };
+      }
+
+      return {
+        type: 'answer',
+        text: "I'm not sure I understand. Feel free to ask me about Phaneendra's experience, skills, education, certifications, projects, or contact information. You can also say 'send request' to get in touch with him directly!"
+      };
+    }
+
+    function toggleChat() {
+      var panel = document.getElementById('chatPanel');
+      var btn = document.getElementById('chatBtn');
+      panel.classList.toggle('open');
+      btn.classList.toggle('hidden');
+      if (panel.classList.contains('open')) {
+        setTimeout(function() { document.getElementById('chatInput').focus(); }, 300);
+      }
+    }
+
+    function addMessage(text, sender) {
+      var container = document.getElementById('chatMessages');
+      var msg = document.createElement('div');
+      msg.className = 'msg ' + sender;
+      msg.textContent = text;
+      container.appendChild(msg);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function showTyping() {
+      var container = document.getElementById('chatMessages');
+      var msg = document.createElement('div');
+      msg.className = 'msg bot typing';
+      msg.id = 'typingIndicator';
+      msg.innerHTML = '<span></span><span></span><span></span>';
+      container.appendChild(msg);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function hideTyping() {
+      var el = document.getElementById('typingIndicator');
+      if (el) el.remove();
+    }
+
+    function sendMessage() {
+      var input = document.getElementById('chatInput');
+      var msg = input.value.trim();
+      if (!msg) return;
+      addMessage(msg, 'user');
+      input.value = '';
+      showTyping();
+
+      setTimeout(function() {
+        hideTyping();
+        var response = findBestResponse(msg);
+        if (response.type === 'request') {
+          addMessage(response.text, 'bot');
+          showRequestForm();
+        } else {
+          addMessage(response.text, 'bot');
+        }
+      }, 600);
+    }
+
+    function handleKeyDown(e) {
+      if (e.key === 'Enter') sendMessage();
+    }
+
+    function showRequestForm() {
+      document.getElementById('requestForm').style.display = 'block';
+      document.getElementById('chatInputWrap').style.display = 'none';
+    }
+
+    function hideRequestForm() {
+      document.getElementById('requestForm').style.display = 'none';
+      document.getElementById('chatInputWrap').style.display = 'flex';
+      document.getElementById('reqName').value = '';
+      document.getElementById('reqEmail').value = '';
+      document.getElementById('reqMsg').value = '';
+    }
+
+    function submitRequest() {
+      var name = document.getElementById('reqName').value.trim();
+      var email = document.getElementById('reqEmail').value.trim();
+      var message = document.getElementById('reqMsg').value.trim();
+      if (!name || !email || !message) {
+        addMessage('Please fill in all fields (name, email, and message).', 'bot');
+        return;
+      }
+
+      var subject = encodeURIComponent('Request from ' + name + ' (' + email + ')');
+      var body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        'Message: ' + message + '\n\n' +
+        '--- Sent via Phaneendra\'s Digital Twin ---'
+      );
+      window.location.href = 'mailto:alluruphaneendrasai@gmail.com?subject=' + subject + '&body=' + body;
+
+      addMessage('Your email client has been opened with the message ready to send. Thank you for reaching out!', 'bot');
+      hideRequestForm();
+    }
+  </script>
+</body>
+</html>

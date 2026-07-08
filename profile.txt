@@ -1,0 +1,190 @@
+PHANEENDRA SAI ALLURU alluruphaneendrasai@gmail.com · +91-7436056449 
+LinkedIn Profile · 
+EXPERIENCE       11 YEARS AND 6 MONTHS 
+NOV-2025 TO TILL DATE 
+ENGINEERING MANAGER – COMMERCIAL DIGITAL - USA 
+VOLVO CARS INDIA PVT LTD 
+As an Engineering Manager, I am responsible for leading a team of 18 professionals. We manage 
+the end-to-end process for the North American and South American markets. Our team is 
+responsible for building data pipelines for commercial data, developing and maintaining web 
+portals for operations, and building iOS and Android applications for Volvo Cars in the North 
+American and South American markets. Designing AI solutions for self-serving analytics, working 
+on LLMs for Chat Functionality for Volvo Cars Application. 
+ 
+MAY-2024 TO OCT-2025 
+PROJECT MANAGER – CORE DATA AND ANALYTICS 
+VOLVO CARS INDIA PVT LTD 
+My responsibilities as a data and analytics project manager for core team involves: 
+• Lead execution of flagship analytical projects for the Core Data and Analytics team at 
+Volvo Cars, driving data-driven decision-making. 
+• Collaborate with the Enterprise Architecture team to develop business cases for 
+identified use cases. 
+• Conduct business analysis and document requirements to ensure clarity and alignment 
+with business goals. 
+• Assist teams in ROI assessment for business cases, supporting data-backed decision-
+making. 
+• Coordinate with executive stakeholders to secure sponsorship, resource approvals, and 
+strategic alignment. 
+• Oversee project implementation using standard data management frameworks and best 
+practices. 
+• Manage project planning and stakeholder communication to ensure seamless execution 
+and alignment with business objectives. 
+• Design and deliver enterprise level applications for program management and financial 
+benefit calculations. 
+ 
+SEP-2021 TO MAY-2024 
+SENIOR PROJECT MANAGER 
+AUTODESK INDIA PVT LTD 
+My responsibilities as a Senior Project Manager involves: 
+• Execute enterprise business agreements (programs) for enterprise-level customers 
+• Conduct business requirement gathering workshops 
+• Coordinate with executives for project approvals 
+2 
+• Oversaw project accounting and revenue recognition, ensuring 100% compliance with 
+financial regulations 
+• Led change management strategies that increased process adoption by 40% 
+• Train and guide teams on best practices in project estimation and planning 
+• Report team KPIs to executive leadership 
+• Recruit and train the PMO team for the APAC region 
+JAN-2020 – AUG-2021 
+PROJECT BUSINESS ANALYST 
+AUTODESK INDIA PVT LTD 
+My responsibilities as a business analyst includes: 
+• Preparing BRD Documents 
+• Preparing consulting contracts  
+• Prepare project time estimation and budget estimation  
+• Train PMO and consulting teams in Project Estimation 
+• Lead process automation initiatives for consulting teams which helped teams reduce 
+human effort by 50% 
+• Coordinate and lead BI teams in developing enterprise metrics and customer analytics 
+projects 
+• KPI management and reporting 
+MAR-2019 – DEC-2019 
+BUSINESS ANALYST 
+COGNIZANT SOLUTIONS PVT LTD 
+My responsibilities as a business analyst at cognizant includes: 
+• Collaborated with consulting teams to gather requirements, negotiate contracts, and 
+define project scope. 
+• Helping teams to track SLAs reduced penalties by 3% 
+• Led project estimation, initiation, and progress tracking to ensure timely delivery. 
+• Managed financial planning, budget oversight, and SLA compliance to optimize project 
+performance. 
+ 
+MAR-2017 – MAR-2019 
+SENIOR ANALYST 
+ACCENTURE SOLUTIONS PVT LTD 
+My responsibilities as a senior analyst includes: 
+• Coordinated with consulting teams for requirement gathering, contracting, project 
+estimation, initiation, and tracking. 
+• Managed financial planning, invoicing, billing, and SLA compliance to ensure project 
+efficiency. 
+• Oversaw vendor management, including contract negotiations and performance 
+evaluation. 
+• Prepared BI reports and managed project documentation to support data-driven 
+decision-making. 
+• Provided reporting and training to PMO teams to enhance project management 
+capabilities. 
+ 
+3 
+JAN-2016 – MAR-2017 
+PMO EXECUTIVE 
+CREDENCYS SOLUTIONS PVT LTD 
+My responsibilities as a PMO executive includes: 
+• Conducted requirement gathering to define project scope and objectives. 
+• Created wireframes to visualize system workflows and user interactions. 
+• Developed and maintained comprehensive project documentation. 
+• Prepared detailed project reports to track progress and key milestones. 
+• Designed and managed project dashboards for real-time monitoring. 
+• Monitored SLA compliance and ensured timely issue resolution. 
+• Tracked performance metrics and generated reports for data-driven decision-making. 
+ 
+JAN-2015 – DEC-2015 
+PROJECT COORDINATOR 
+ELSNER TECHNOLOGIES PVT LTD 
+My responsibilities as a project coordinator includes: 
+• Gathered and analyzed business requirements to define project scope and objectives. 
+• Created wireframes to illustrate system workflows and user interactions. 
+• Developed and maintained comprehensive project documentation. 
+• Generated detailed project reports to track progress, risks, and key milestones. 
+• Designed and managed project dashboards for real-time performance monitoring. 
+• Tracked and ensured SLA compliance to meet service-level commitments. 
+• Monitored key performance metrics and provided data-driven insights through reporting. 
+ 
+EDUCATION 
+APR 2015  
+MASTER OF BUSINESS ADMINISTRATION, RAI BUSINESS SCHOOL 
+3.1 CGPA  
+APR 2013  
+BACHELOR OF TECHNOLOGY IN ELECTRICAL AND ELECTRONICS ENGINEERING, 
+RISE PRAKASAM ENGINEERING COLLEGE - JNTUK 
+74.47 percent 
+CERTIFICATIONS 
+• Certified Scrum Master (CSM) 
+• LUMA  
+• Six Sigma Green Belt 
+• Product Management Specialization 
+• SAFe 6.0 Certified Practitioner 
+• Google Data Analytics Professional  
+• Google Advanced Data Analytics 
+Professional Certified 
+• Digital Product Management Specialization  
+ 
+4 
+TOOLS AND TECHNOLOGIES 
+• Flutter Development 
+• Agentic AI Development 
+• Python Programming  
+• MySQL 
+• Django 
+• Microsoft Power BI 
+• Tableau 
+ 
+ 
+ 
+• Jira 
+• Azure DevOps 
+• MS Project 
+ 
+ 
+ 
+CURRENT PROJECTS 
+ 
+FLEET MANAGEMENT APPLICATION FOR VOLVO CARS 
+This application addresses the issue of tracking orders/cars from dealers from factory floor to dealer 
+warehouse. This is a cross functional application using data from multiple enterprise outbound logistics 
+systems and sales systems. We are combining this data with telematics data from car to help dealers to 
+track health, location and state of the car.  
+BUSINESS ANALYSIS AND PROGRAM PLANNING FOR DATA PLATFORM 
+DEVELOPMENT FOR CROSS BOARDER DATA TRANSFER 
+This project focuses on understanding current data systems, their interdependencies, and gaps in 
+existing processes that could make data transfers risky and non-compliant with various laws and 
+government regulations. 
+As part of this initiative, we developed a program plan to build a platform that manages both internal 
+and external data transfers. 
+CORPORATE DATA AND ANALYTICS DASHBOARDS FOR DATA AND ANALYTICS 
+LEADERSHIP TEAM 
+This is an interesting project supporting the global Data and Analytics leadership team in prioritizing and 
+funding organizational initiatives. 
+As part of this program, we have built an end-to-end process for use case, project, and program intake. 
+We also developed a backend solution to support this process, along with data engineering pipelines to 
+pull information from multiple platforms related to these initiatives. Additionally, we assess the data 
+quality of each use case and its intended purpose. Finally, we deliver an analytical product that visualizes 
+insights and supports leadership decision-making. 
+5 
+DATA ENGINEERING SUPPORT FOR ADVANCED PLANNING SOLUTION FOR 
+LOGISTICS AND SUPPLY CHAIN MANAGEMENT 
+This project was part of a larger program, where we played an integral role. We were responsible for 
+building data pipelines to support planning solutions, which included data from all engineering and 
+supply chain management systems used in manufacturing. 
+PROOF OF CONCEPT FOR AUTOMATED DATA QUALITY INTROSPECTION. 
+With my experience in data and analytics, I’ve found that most issues stem from poor data quality. This 
+remains a major challenge in data product development and analytics projects. To improve data quality, 
+we use a variety of tools and solutions. However, to some extent, we still rely on manual efforts and 
+sampling-based validation. 
+Since every record is critical in manufacturing and supply chain management, we aimed to automate the 
+process with a focus on record-level accuracy. We developed a solution to support this concept, which is 
+now being integrated into our data pipelines for production use. 
+A UNIFIED INTAKE PROCESS AND SUPPORTING WEB APPLICATION FOR VOLVO 
+CARS AS A COMPANY 
+This application provides a unified decision-making framework for Volvo Cars, enabling leadership to 
+prioritize projects based on financial impact and execution capabilities. 
